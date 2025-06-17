@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		A523C6F62E01B1C700BFC569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A523C6DD2E01B1C600BFC569 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A523C6E42E01B1C600BFC569;
+			remoteInfo = C4_GymPose;
+		};
+		A523C7002E01B1C700BFC569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A523C6DD2E01B1C600BFC569 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A523C6E42E01B1C600BFC569;
+			remoteInfo = C4_GymPose;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A523C6E52E01B1C600BFC569 /* C4_GymPose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C4_GymPose.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A523C6F52E01B1C700BFC569 /* C4_GymPoseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C4_GymPoseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A523C6FF2E01B1C700BFC569 /* C4_GymPoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C4_GymPoseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A523C6E72E01B1C600BFC569 /* C4_GymPose */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = C4_GymPose;
+			sourceTree = "<group>";
+		};
+		A523C6F82E01B1C700BFC569 /* C4_GymPoseTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = C4_GymPoseTests;
+			sourceTree = "<group>";
+		};
+		A523C7022E01B1C700BFC569 /* C4_GymPoseUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = C4_GymPoseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A523C6E22E01B1C600BFC569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A523C6F22E01B1C700BFC569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A523C6FC2E01B1C700BFC569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A523C6DC2E01B1C600BFC569 = {
+			isa = PBXGroup;
+			children = (
+				A523C6E72E01B1C600BFC569 /* C4_GymPose */,
+				A523C6F82E01B1C700BFC569 /* C4_GymPoseTests */,
+				A523C7022E01B1C700BFC569 /* C4_GymPoseUITests */,
+				A523C6E62E01B1C600BFC569 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A523C6E62E01B1C600BFC569 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A523C6E52E01B1C600BFC569 /* C4_GymPose.app */,
+				A523C6F52E01B1C700BFC569 /* C4_GymPoseTests.xctest */,
+				A523C6FF2E01B1C700BFC569 /* C4_GymPoseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A523C6E42E01B1C600BFC569 /* C4_GymPose */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A523C7092E01B1C700BFC569 /* Build configuration list for PBXNativeTarget "C4_GymPose" */;
+			buildPhases = (
+				A523C6E12E01B1C600BFC569 /* Sources */,
+				A523C6E22E01B1C600BFC569 /* Frameworks */,
+				A523C6E32E01B1C600BFC569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A523C6E72E01B1C600BFC569 /* C4_GymPose */,
+			);
+			name = C4_GymPose;
+			packageProductDependencies = (
+			);
+			productName = C4_GymPose;
+			productReference = A523C6E52E01B1C600BFC569 /* C4_GymPose.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A523C6F42E01B1C700BFC569 /* C4_GymPoseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A523C70C2E01B1C700BFC569 /* Build configuration list for PBXNativeTarget "C4_GymPoseTests" */;
+			buildPhases = (
+				A523C6F12E01B1C700BFC569 /* Sources */,
+				A523C6F22E01B1C700BFC569 /* Frameworks */,
+				A523C6F32E01B1C700BFC569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A523C6F72E01B1C700BFC569 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A523C6F82E01B1C700BFC569 /* C4_GymPoseTests */,
+			);
+			name = C4_GymPoseTests;
+			packageProductDependencies = (
+			);
+			productName = C4_GymPoseTests;
+			productReference = A523C6F52E01B1C700BFC569 /* C4_GymPoseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A523C6FE2E01B1C700BFC569 /* C4_GymPoseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A523C70F2E01B1C700BFC569 /* Build configuration list for PBXNativeTarget "C4_GymPoseUITests" */;
+			buildPhases = (
+				A523C6FB2E01B1C700BFC569 /* Sources */,
+				A523C6FC2E01B1C700BFC569 /* Frameworks */,
+				A523C6FD2E01B1C700BFC569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A523C7012E01B1C700BFC569 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A523C7022E01B1C700BFC569 /* C4_GymPoseUITests */,
+			);
+			name = C4_GymPoseUITests;
+			packageProductDependencies = (
+			);
+			productName = C4_GymPoseUITests;
+			productReference = A523C6FF2E01B1C700BFC569 /* C4_GymPoseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A523C6DD2E01B1C600BFC569 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					A523C6E42E01B1C600BFC569 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					A523C6F42E01B1C700BFC569 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A523C6E42E01B1C600BFC569;
+					};
+					A523C6FE2E01B1C700BFC569 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A523C6E42E01B1C600BFC569;
+					};
+				};
+			};
+			buildConfigurationList = A523C6E02E01B1C600BFC569 /* Build configuration list for PBXProject "C4_GymPose" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A523C6DC2E01B1C600BFC569;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A523C6E62E01B1C600BFC569 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A523C6E42E01B1C600BFC569 /* C4_GymPose */,
+				A523C6F42E01B1C700BFC569 /* C4_GymPoseTests */,
+				A523C6FE2E01B1C700BFC569 /* C4_GymPoseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A523C6E32E01B1C600BFC569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A523C6F32E01B1C700BFC569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A523C6FD2E01B1C700BFC569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A523C6E12E01B1C600BFC569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A523C6F12E01B1C700BFC569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A523C6FB2E01B1C700BFC569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A523C6F72E01B1C700BFC569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A523C6E42E01B1C600BFC569 /* C4_GymPose */;
+			targetProxy = A523C6F62E01B1C700BFC569 /* PBXContainerItemProxy */;
+		};
+		A523C7012E01B1C700BFC569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A523C6E42E01B1C600BFC569 /* C4_GymPose */;
+			targetProxy = A523C7002E01B1C700BFC569 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A523C7072E01B1C700BFC569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A523C7082E01B1C700BFC569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A523C70A2E01B1C700BFC569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"C4_GymPose/Preview Content\"";
+				DEVELOPMENT_TEAM = QMV7N4KZBR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.C4-GymPose";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A523C70B2E01B1C700BFC569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"C4_GymPose/Preview Content\"";
+				DEVELOPMENT_TEAM = QMV7N4KZBR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.C4-GymPose";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A523C70D2E01B1C700BFC569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.C4-GymPoseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/C4_GymPose.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/C4_GymPose";
+			};
+			name = Debug;
+		};
+		A523C70E2E01B1C700BFC569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.C4-GymPoseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/C4_GymPose.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/C4_GymPose";
+			};
+			name = Release;
+		};
+		A523C7102E01B1C700BFC569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.C4-GymPoseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = C4_GymPose;
+			};
+			name = Debug;
+		};
+		A523C7112E01B1C700BFC569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.C4-GymPoseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = C4_GymPose;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A523C6E02E01B1C600BFC569 /* Build configuration list for PBXProject "C4_GymPose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A523C7072E01B1C700BFC569 /* Debug */,
+				A523C7082E01B1C700BFC569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A523C7092E01B1C700BFC569 /* Build configuration list for PBXNativeTarget "C4_GymPose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A523C70A2E01B1C700BFC569 /* Debug */,
+				A523C70B2E01B1C700BFC569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A523C70C2E01B1C700BFC569 /* Build configuration list for PBXNativeTarget "C4_GymPoseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A523C70D2E01B1C700BFC569 /* Debug */,
+				A523C70E2E01B1C700BFC569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A523C70F2E01B1C700BFC569 /* Build configuration list for PBXNativeTarget "C4_GymPoseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A523C7102E01B1C700BFC569 /* Debug */,
+				A523C7112E01B1C700BFC569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A523C6DD2E01B1C600BFC569 /* Project object */;
+}
