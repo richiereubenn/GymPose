@@ -118,16 +118,13 @@ fileprivate func onPositionFrontDoubleBicepPose(observation: HumanBodyPose3DObse
     detectedJoints["rightElbow"] = rightElbow != nil
     detectedJoints["leftWrist"] = leftWrist != nil
     detectedJoints["rightWrist"] = rightWrist != nil
-    
-//    print("Joint Detection Status:")
-//    for (joint, detected) in detectedJoints {
-//        let status = detected ? "✅" : "❌"
-//        print("   \(status) \(joint): \(detected ? "DETECTED" : "NOT DETECTED")")
-//        if !detected {
-//            missingJoints.append(joint)
-//        }
-//    }
-    
+
+    for (joint, detected) in detectedJoints {
+        if !detected {
+            missingJoints.append(joint)
+        }
+    }
+
     if missingJoints.count > 2 {
         print("\n❌ CLASSIFICATION RESULT: POSE TIDAK DAPAT DIDETEKSI")
         print("Reason: Terlalu banyak joint yang tidak terdeteksi (\(missingJoints.count)/6)")
@@ -138,79 +135,111 @@ fileprivate func onPositionFrontDoubleBicepPose(observation: HumanBodyPose3DObse
             detectedJoints: detectedJoints
         )
     }
-    
+
     print("\nPOSE ANALYSIS:")
     
-    if let leftShoulder = leftShoulder, let leftElbow = leftElbow {
-        let leftShoulderY = leftShoulder.position.columns.3.y
-        let leftElbowY = leftElbow.position.columns.3.y
-        let leftArmRaised = leftElbowY > leftShoulderY
-        print("Left arm raised: \(leftArmRaised ? "✅ YES" : "❌ NO") (Shoulder Y: \(String(format: "%.3f", leftShoulderY)), Elbow Y: \(String(format: "%.3f", leftElbowY)))")
-        if !leftArmRaised {
-            feedback.append("Angkat lengan kiri lebih tinggi")
+    let shoulderElbowMinThreshold: Float = 0.040
+    let shoulderElbowMaxThreshold: Float = 0.220
+    let flexThresholdNormalized: Float = 0.5
+
+    var leftArmAligned = false
+    var rightArmAligned = false
+
+    if let s = leftShoulder, let e = leftElbow {
+        let deltaY = e.position.columns.3.y - s.position.columns.3.y
+        let absDeltaY = abs(deltaY)
+        leftArmAligned = (absDeltaY >= shoulderElbowMinThreshold) && (absDeltaY <= shoulderElbowMaxThreshold)
+        print("Left arm aligned: \(leftArmAligned ? "✅ YES" : "❌ NO") (ΔY: \(String(format: "%.3f", absDeltaY)))")
+        
+        if !leftArmAligned {
+            feedback.append(deltaY < -0.02
+                ? "Siku kiri terlalu rendah dari bahu (ΔY: \(String(format: "%.3f", deltaY)))"
+                : "Siku kiri terlalu tinggi dari bahu (ΔY: \(String(format: "%.3f", deltaY)))")
             isCorrectPose = false
             confidence -= 0.3
         }
     }
-    
-    if let rightShoulder = rightShoulder, let rightElbow = rightElbow {
-        let rightShoulderY = rightShoulder.position.columns.3.y
-        let rightElbowY = rightElbow.position.columns.3.y
-        let rightArmRaised = rightElbowY > rightShoulderY
-        print("Right arm raised: \(rightArmRaised ? "✅ YES" : "❌ NO") (Shoulder Y: \(String(format: "%.3f", rightShoulderY)), Elbow Y: \(String(format: "%.3f", rightElbowY)))")
-        if !rightArmRaised {
-            feedback.append("Angkat lengan kanan lebih tinggi")
+
+    if let s = rightShoulder, let e = rightElbow {
+        let deltaY = e.position.columns.3.y - s.position.columns.3.y
+        let absDeltaY = abs(deltaY)
+        rightArmAligned = (absDeltaY >= shoulderElbowMinThreshold) && (absDeltaY <= shoulderElbowMaxThreshold)
+        print("Right arm aligned: \(rightArmAligned ? "✅ YES" : "❌ NO") (ΔY: \(String(format: "%.3f", absDeltaY)))")
+        
+        if !rightArmAligned {
+            feedback.append(deltaY < -0.02
+                ? "Siku kanan terlalu rendah dari bahu (ΔY: \(String(format: "%.3f", deltaY)))"
+                : "Siku kanan terlalu tinggi dari bahu (ΔY: \(String(format: "%.3f", deltaY)))")
             isCorrectPose = false
             confidence -= 0.3
         }
     }
-    
-    if let leftElbow = leftElbow, let leftWrist = leftWrist {
-        let leftElbowY = leftElbow.position.columns.3.y
-        let leftWristY = leftWrist.position.columns.3.y
-        let leftBicepFlexed = leftWristY > leftElbowY
-        print("Left bicep flexed: \(leftBicepFlexed ? "✅ YES" : "❌ NO") (Elbow Y: \(String(format: "%.3f", leftElbowY)), Wrist Y: \(String(format: "%.3f", leftWristY)))")
-        if !leftBicepFlexed {
+
+    if let s = leftShoulder, let e = leftElbow, let w = leftWrist {
+        let elbowY = e.position.columns.3.y
+        let wristY = w.position.columns.3.y
+        let deltaY = wristY - elbowY
+        let armLength = abs(e.position.columns.3.y - s.position.columns.3.y)
+        let normalizedDeltaY = armLength > 0 ? deltaY / armLength : 0
+        
+        let flexed = leftArmAligned ? normalizedDeltaY > flexThresholdNormalized : deltaY > 0
+        print("Left bicep flexed: \(flexed ? "✅ YES" : "❌ NO") (ΔY: \(String(format: "%.3f", deltaY)), Normalized: \(String(format: "%.3f", normalizedDeltaY)), ArmAligned: \(leftArmAligned ? "✅" : "❌"))")
+
+        if !flexed {
             feedback.append("Tekuk lengan kiri lebih kuat untuk menunjukkan bisep")
             isCorrectPose = false
             confidence -= 0.2
         }
     }
-    
-    if let rightElbow = rightElbow, let rightWrist = rightWrist {
-        let rightElbowY = rightElbow.position.columns.3.y
-        let rightWristY = rightWrist.position.columns.3.y
-        let rightBicepFlexed = rightWristY > rightElbowY
-        print("Right bicep flexed: \(rightBicepFlexed ? "✅ YES" : "❌ NO") (Elbow Y: \(String(format: "%.3f", rightElbowY)), Wrist Y: \(String(format: "%.3f", rightWristY)))")
-        if !rightBicepFlexed {
+
+    if let s = rightShoulder, let e = rightElbow, let w = rightWrist {
+        let elbowY = e.position.columns.3.y
+        let wristY = w.position.columns.3.y
+        let deltaY = wristY - elbowY
+        let armLength = abs(e.position.columns.3.y - s.position.columns.3.y)
+        let normalizedDeltaY = armLength > 0 ? deltaY / armLength : 0
+        
+        let flexed = rightArmAligned ? normalizedDeltaY > flexThresholdNormalized : deltaY > 0
+        print("Right bicep flexed: \(flexed ? "✅ YES" : "❌ NO") (ΔY: \(String(format: "%.3f", deltaY)), Normalized: \(String(format: "%.3f", normalizedDeltaY)), ArmAligned: \(rightArmAligned ? "✅" : "❌"))")
+        
+        if !flexed {
             feedback.append("Tekuk lengan kanan lebih kuat untuk menunjukkan bisep")
             isCorrectPose = false
             confidence -= 0.2
         }
     }
     
-    if let leftShoulder = leftShoulder, let rightShoulder = rightShoulder {
-        let leftShoulderY = leftShoulder.position.columns.3.y
-        let rightShoulderY = rightShoulder.position.columns.3.y
-        let shoulderDifference = abs(leftShoulderY - rightShoulderY)
-        let shouldersLevel = shoulderDifference < 0.1
-        print("Shoulders level: \(shouldersLevel ? "✅ YES" : "❌ NO") (Left: \(String(format: "%.3f", leftShoulderY)), Right: \(String(format: "%.3f", rightShoulderY)), Diff: \(String(format: "%.3f", shoulderDifference)))")
-        if !shouldersLevel {
-            feedback.append("Sejajarkan kedua bahu")
-            confidence -= 0.1
+    let elbowSeparationThreshold: Float = 2
+    
+    if let leftElbow = leftElbow, let rightElbow = rightElbow,
+       let leftShoulder = leftShoulder, let rightShoulder = rightShoulder {
+        
+        let deltaY = abs(leftElbow.position.columns.3.y - rightElbow.position.columns.3.y)
+
+        let shoulderHeight = abs(leftShoulder.position.columns.3.y - rightShoulder.position.columns.3.y)
+        let normalizedElbowDeltaY = shoulderHeight > 0 ? deltaY / shoulderHeight : 0
+
+        let isElbowTooClose = normalizedElbowDeltaY < elbowSeparationThreshold
+
+        print("Elbow vertical separation: \(String(format: "%.3f", deltaY)), Normalized: \(String(format: "%.3f", normalizedElbowDeltaY)) → \(isElbowTooClose ? "❌ TOO CLOSE" : "✅ OK")")
+
+        if isElbowTooClose {
+            feedback.append("Siku kiri dan kanan terlalu sejajar vertikal - rentangkan siku lebih keluar")
+            isCorrectPose = false
+            confidence -= 0.2
         }
     }
-    
+
+
     confidence = max(0.0, confidence)
-    
-    let finalFeedback = isCorrectPose ? "Pose Front Double Bicep SEMPURNA! " : feedback.joined(separator: ", ")
-    
+    let finalFeedback = isCorrectPose ? "Pose Front Double Bicep SEMPURNA! 💪" : feedback.joined(separator: ", ")
+
     print("\n=== FINAL CLASSIFICATION RESULT ===")
     print("Pose Correct: \(isCorrectPose ? "✅ YES" : "❌ NO")")
     print("Confidence: \(String(format: "%.1f", confidence * 100))%")
     print("Feedback: \(finalFeedback)")
     print("=======================================\n")
-    
+
     return PoseClassificationResult(
         isPoseCorrect: isCorrectPose,
         confidence: confidence,
@@ -218,6 +247,7 @@ fileprivate func onPositionFrontDoubleBicepPose(observation: HumanBodyPose3DObse
         detectedJoints: detectedJoints
     )
 }
+
 
 fileprivate func processImage(image: Data) async throws -> BodyPoseData {
     
